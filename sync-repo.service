@@ -1,0 +1,12 @@
+[Unit]
+Description=Auto-sync GitHub repository
+
+[Service]
+Type=simple
+ExecStart=/bin/bash ~/dotfiles/push-repo.sh
+Restart=always
+User=peaceofsense
+
+[Install]
+WantedBy=default.target
+
