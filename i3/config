@@ -15,7 +15,7 @@ set $mod Mod4
 # set $mod Mod1
 
 exec --no-startup-id picom
-exec_always feh --bg-fill /home/peaceofsense/Pictures/Wallpapers/wallhaven2.png
+exec_always feh --bg-fill ~/Pictures/Wallpapers/wallhaven2.png
 exec --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 
@@ -24,14 +24,21 @@ exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 exec_always killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 
-bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
-bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
-bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
+
+# Screenshot bindings with clipboard copy
+bindsym Print exec --no-startup-id /usr/bin/gnome-screenshot -f ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym $mod+Shift+w exec --no-startup-id /usr/bin/gnome-screenshot -w -f ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym $mod+Shift+a exec --no-startup-id /usr/bin/gnome-screenshot -a -f ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym $mod+Shift+i exec --no-startup-id gnome-screenshot -i -f /tmp/screenshot.png && xclip -selection clipboard -t image/png -i /tmp/screenshot.png && notify-send 'Interactive screenshot captured and copied to clipboard'
+
+#bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
+#bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
+#bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
 
 ## Clipboard Screenshots
-bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png
+#bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png
+#bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+#bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -235,7 +242,11 @@ client.background        $base
 
 bindsym $mod+Shift+x exec i3lock
 
-exec_always xrandr --output eDP-1 --mode 1920x1080 --scale 0.85x0.85 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --primary --mode 1920x1080 --pos 1920x0 --rotate normal
+# exec_always xrandr --output eDP-1 --mode 1920x1080 --scale 0.85x0.85 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --primary --mode 1920x1080 --pos 1920x0 --rotate normal
+
+
+
+
 
 assign [class="Spotify"] $ws10
 assign [class="Vivaldi-stable"] $ws2
@@ -243,3 +254,5 @@ assign [class="thunderbird"] $ws1
 
 
 exec_always compton
+
+exec --no-startup-id nm-applet
