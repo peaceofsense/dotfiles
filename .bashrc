@@ -13,7 +13,7 @@
 test -s ~/.alias && . ~/.alias || true
 # export PATH="/home/peaceofsense/miniconda3/bin:$PATH"  # commented out by conda initialize  
 
-
+export TERMINAL=kitty
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -50,7 +50,25 @@ unset __conda_setup
 #
 #
 alias connect-fau='sudo openconnect --authgroup=FAU-Fulltunnel vpn.fau.de'
+alias jnb='jupyter-notebook'
 
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/github_peaceofsense
 
+#eval "$(ssh-agent -s)"
+#ssh-add ~/.ssh/github_peaceofsense
+git-push() {
+    # Prompt for commit message
+    read -p "Enter commit message: " message
+
+    # Prompt for branch name
+    read -p "Enter branch name (default: main): " branch
+    branch=${branch:-main}  # Default to 'main' if no input provided
+
+    # Add all changes to the staging area
+    git add .
+
+    # Commit changes with the provided message
+    git commit -m "$message"
+
+    # Push changes to the specified branch on 'origin' remote
+    git push origin "$branch"
+}
