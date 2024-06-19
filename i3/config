@@ -15,7 +15,7 @@ set $mod Mod4
 # set $mod Mod1
 
 exec --no-startup-id thunderbird
-exec --no-startup-id thunar
+exec --no-startup-id nemo
 exec --no-startup-id picom
 exec_always feh --bg-fill ~/Pictures/Wallpapers/wallhaven2.png
 exec --no-startup-id xrdb -merge ~/.Xresources
@@ -32,7 +32,7 @@ bindsym Print exec --no-startup-id /usr/bin/gnome-screenshot -f ~/Pictures/Scree
 bindsym $mod+Shift+w exec --no-startup-id /usr/bin/gnome-screenshot -w -f ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
 bindsym $mod+Shift+a exec --no-startup-id /usr/bin/gnome-screenshot -a -f ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
 bindsym $mod+Shift+i exec --no-startup-id gnome-screenshot -i -f /tmp/screenshot.png && xclip -selection clipboard -t image/png -i /tmp/screenshot.png && notify-send 'Interactive screenshot captured and copied to clipboard'
-bindsym $mod+t exec thunar
+bindsym $mod+t exec nautilus 
 
 #bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
 #bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
@@ -250,8 +250,8 @@ bindsym $mod+Shift+x exec i3lock
 # xprop for class
 assign [class="Spotify"] $ws10
 assign [class="Vivaldi-stable"] $ws2
-assign [class="Thunar"] $ws3
-assign [class="thunderbird"] $ws4
+assign [class="Nemo"] $ws3
+assign [class="nautilus"] $ws4
 assign [class="Slack"] $ws9
 
 exec_always compton
