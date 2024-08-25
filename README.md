@@ -20,8 +20,8 @@ To install these dependencies, use the package manager for your distribution:
 ```bash
 sudo zypper install hyprland kitty stow
 
-#### Using Stow
+# Using Stow (dir ~)
 
-```bash
 cd dotfiles
 stow .
+stow --adopt . # Incase of existing files
