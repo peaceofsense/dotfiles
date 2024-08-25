@@ -22,7 +22,7 @@ Before setting up the dotfiles, make sure you have the following dependencies in
 
 To install these dependencies, use the package manager for your distribution:
 
-**On Debian/Ubuntu-based systems:**
+**On OpenSUSE Tumbleweed:**
 
 ```bash
 sudo zypper install hyprland kitty stow
