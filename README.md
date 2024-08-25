@@ -3,13 +3,6 @@
 
 This repository contains my personal dotfiles and configurations. These files are used to configure my environment, including Hyprland, Kitty terminal, and various other tools. Follow the instructions below to clone the repository, install dependencies, and apply the configurations.
 
-## Table of Contents
-
-- [Dependencies](#dependencies)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-
 ## Dependencies
 
 Before setting up the dotfiles, make sure you have the following dependencies installed:
@@ -26,3 +19,9 @@ To install these dependencies, use the package manager for your distribution:
 
 ```bash
 sudo zypper install hyprland kitty stow
+
+#### Using Stow
+
+```bash
+cd dotfiles
+stow .
