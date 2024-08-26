@@ -10,6 +10,8 @@ Before setting up the dotfiles, make sure you have the following dependencies in
 - **Hyprland**: A dynamic tiling Wayland compositor.
 - **Kitty**: A modern, feature-rich terminal emulator.
 - **Stow**: A symlink farm manager used to manage dotfiles.
+- **JetBrainsMono NFP**: Font style used
+- **grim & slurp**: Screenshot tool
 
 ### Installing Dependencies
 
