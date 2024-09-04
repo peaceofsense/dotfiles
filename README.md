@@ -29,4 +29,4 @@ stow .
 stow --adopt . # Incase of existing files
 
 # Extras
-sudo zypper in qalculate vlc geany gparted thunderbird remmina texstudio jabref 
+sudo zypper in qalculate vlc geany gparted thunderbird remmina texstudio jabref thunar

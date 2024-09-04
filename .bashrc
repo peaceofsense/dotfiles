@@ -515,3 +515,19 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export GDK_BACKEND=wayland
+export QT_QPA_PLATFORM=wayland
+export CLUTTER_BACKEND=wayland
+export SDL_VIDEODRIVER=wayland
+
+# List of offensive or undesirable cow files
+excluded_files=("sodomized" "mutilated" "hellokitty" "vader")
+
+# Get a list of all valid cow files (ending in .cow) in /usr/share/cowsay/cows
+cow_files=(/usr/share/cowsay/cows/*.cow)
+
+# Select a random cow file from the list
+random_cow=${cow_files[$RANDOM % ${#cow_files[@]}]}
+
+# Generate a random fortune and pipe it to cowsay with the random cow character
+fortune | cowsay -f "$(basename "$random_cow" .cow)"
