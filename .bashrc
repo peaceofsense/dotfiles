@@ -460,7 +460,6 @@ alias connect-fau='sudo openconnect --authgroup=FAU-Fulltunnel vpn.fau.de'
 alias nmcli-connect='sudo nmcli device wifi connect'
 alias nmcli-pixel='nmcli device wifi connect "Google Pixel"'
 alias jnb='jupyter-notebook'
-alias zy='sudo zypper'
 
 
 git-push() {
@@ -520,14 +519,20 @@ export QT_QPA_PLATFORM=wayland
 export CLUTTER_BACKEND=wayland
 export SDL_VIDEODRIVER=wayland
 
-# List of offensive or undesirable cow files
-excluded_files=("sodomized" "mutilated" "hellokitty" "vader")
 
-# Get a list of all valid cow files (ending in .cow) in /usr/share/cowsay/cows
-cow_files=(/usr/share/cowsay/cows/*.cow)
+# Function to rebuild NixOS from the flake configuration
+nixos_rebuild() {
+    echo "Running nixos-rebuild switch..."
+    sudo nixos-rebuild switch --flake ~/nixos-config
+    
+    # Check the exit status and provide feedback
+    if [ $? -eq 0 ]; then
+        echo "NixOS rebuilt successfully."
+    else
+        echo "NixOS rebuild failed."
+    fi
+}
 
-# Select a random cow file from the list
-random_cow=${cow_files[$RANDOM % ${#cow_files[@]}]}
+# Optionally, you can add an alias for quick access
+alias rebuild='nixos_rebuild'
 
-# Generate a random fortune and pipe it to cowsay with the random cow character
-fortune | cowsay -f "$(basename "$random_cow" .cow)"
