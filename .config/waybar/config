@@ -86,7 +86,9 @@
     "max-length": 10
 	},
 
-    
+
+
+
     "battery": {
         "states": {
             // "good": 95,
