@@ -61,7 +61,8 @@
 #hyprland-window {
   color: @text;
   border-radius: 1rem;
-  margin: 5px;
+  margin-left: 2rem;
+  
 }
 
 /* Styles for modules in "modules-right" */
@@ -80,13 +81,15 @@
 #cpu {
   color: @orange;
   border-radius: 1rem;
-  margin: 5px;
+  margin-left: 0.75rem;
+  margin-right: 5px;
 }
 
 #memory {
   color: @purple;
   border-radius: 1rem;
-  margin: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 #hyprland-language {
@@ -98,36 +101,40 @@
 
 #battery {
   color: @green;
-  padding: 0.5rem; /* Space inside the border */
-  border-radius: 1rem 0px 0px 1rem; /* Rounded corners */
   margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 #battery.charging {
   color: @green;
-  padding: 0.5rem; /* Space inside the border */
-  border-radius: 1rem 0px 0px 1rem; /* Rounded corners */
   margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 #battery.warning:not(.charging) {
   color: @red;
-  padding: 0.5rem; /* Space inside the border */
-  border-radius: 1rem 0px 0px 1rem; /* Rounded corners */
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#backlight {
+  color: @yellow;
+  border-radius: 0;
   margin-left: 1rem;
 }
 
 #pulseaudio {
   color: @maroon;
   border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 0.5rem;
+  
 }
 
 #clock {
-  color: @blue;
+  color: @sapphire;
   border-radius: 0px 1rem 1rem 0px;
-  margin-right: 1rem;
+  
+  margin-left: 1rem;
 }
 
 /* General styles for additional modules */
@@ -152,8 +159,4 @@
   border-radius: 1rem;
 }
 
-#backlight {
-  color: @yellow;
-  border-radius: 0;
-}
 

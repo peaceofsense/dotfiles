@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces","hyprland/window"],
     "modules-center": [],
-    "modules-right": ["network", "bluetooth", "cpu", "memory", "hyprland/language", "battery", "pulseaudio", "clock"],
+    "modules-right": ["network", "cpu", "memory", "pulseaudio", "backlight", "clock","battery", "tray"],
 	
 	"hyprland/workspaces": {
 	"format": "{icon}",
@@ -52,8 +52,9 @@
         // "icon-size": 21,
         "spacing": 10
     },
+    
     "clock": {
-    "format": " {:%Y.%m.%d %H:%M:%S}",   // Date: YYYY.MM.DD, Time: HH:MM:SS
+    "format": " {:%Y.%m.%d | %H:%M:%S}",   // Date: YYYY.MM.DD, Time: HH:MM:SS
     "format-alt": "{:%Y.%m.%d %H:%M:%S}",  // Alternative format (for hovering or other states)
     "tooltip-format": "<span color='#35b9ab'><tt><small>{calendar}</small></tt></span>",
     "on-click-right": "thunderbird -calendar",  
@@ -104,10 +105,10 @@
 
     "network": {
         //"interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{ifname} {essid}",
+        "format-wifi": "{essid}",
         "format-ethernet": "",
         "format-linked": "",
-        "format-disconnected": "⚠",
+        "format-disconnected": "No Connection",
         "format-alt": "{ifname} {essid} ({signalStrength}%)"
     },
     
@@ -146,6 +147,27 @@
         "on-click-right": "pavucontrol",
         "tooltip": false
     },
+     "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "scroll-step": 1
+  },
     
 	"return-type": "json",
 	"exec-if": "which swaync-client",
