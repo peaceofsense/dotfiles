@@ -12,13 +12,14 @@
 	"hyprland/workspaces": {
 	"format": "{icon}",
 	"format-icons": {
-            "1": "",
-    //        "2": "",
-   //         "3": "",
-            "10": "",
+    //       "1": "",
+    //       "2": "",
+   //        "3": "",
+            "10": "0",
     //         "5": "",
     //         "urgent": "",
     //         "focused": "",
+               "active": ""
     //         "default": ""
          },
 	"persistent-workspaces": {
