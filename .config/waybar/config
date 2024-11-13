@@ -130,10 +130,10 @@
     "on-click-right": "blueman-manager"
     },
     "pulseaudio": {
-        "format": "{icon}",
-        "format-alt": "{volume} {icon}",
+        "format": "{icon} ",
+        "format-alt": "{volume}% {icon} | {format_source}",
         "format-alt-click": "click-right",
-        "format-muted": "",
+        "format-muted": "",
         "format-icons": {
             "headphones": "",
             "handsfree": "",
@@ -141,13 +141,17 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
-        },
+            "default": ["", "", ""] },
+        "format-source": "",
+        "format-source-muted": "",
+
         "scroll-step": 10,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "pavucontrol",
         "tooltip": false
     },
+
+
      "backlight": {
     "format": "{icon} {percent}%",
     "format-icons": [
