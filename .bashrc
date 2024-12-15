@@ -328,4 +328,5 @@ nixos_rebuild() {
 # Optionally, you can add an alias for quick access
 alias rebuild='nixos_rebuild'
 alias xfreerdp-evt='xfreerdp /v:10.188.251.74 /cert:ignore /u:ratheesan +clipboard /dynamic-resolution'
+alias py='python3'
 alias ddcutil-bash='sudo ddcutil --display 1 setvcp 10'
