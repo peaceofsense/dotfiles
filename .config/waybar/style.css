@@ -130,11 +130,16 @@
   
 }
 
+#pulseaudio#microphone {
+  color: @maroon;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 0.5rem;
+  
+}
 
 #clock {
   color: @sapphire;
   border-radius: 0px 1rem 1rem 0px;
-  
   margin-left: 1rem;
 }
 
@@ -160,4 +165,19 @@
   border-radius: 1rem;
 }
 
+#custom-weather{
+  margin-right: 0.5rem;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-left: 1rem;
+}
 
+#keyboard-state label{
+  margin-right: 0.5rem;
+  color:@surface0;
+  margin-right: 0.5rem;
+}
+
+#keyboard-state label.locked{
+  color:white;
+  margin-right: 0.5rem;
+}
