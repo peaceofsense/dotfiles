@@ -193,7 +193,8 @@
 
 	
      "backlight": {
-    "format": "{icon} {percent}%",
+    "format": "{icon}",
+    "tooltip-format": "{icon} {percent}%",
     "format-icons": [
       "",
       "",
@@ -211,7 +212,7 @@
       "",
       ""
     ],
-    "scroll-step": 1
+    "scroll-step": 5
   },
     
 	"return-type": "json",

@@ -68,7 +68,6 @@
 /* Styles for modules in "modules-right" */
 #network {
   color: @blue;
-  border-radius: 1rem;
   margin: 5px;
 }
 
@@ -80,8 +79,7 @@
 
 #cpu {
   color: @orange;
-  border-radius: 1rem;
-  margin-left: 0.75rem;
+  margin-left: 10px;
   margin-right: 5px;
 }
 
@@ -120,13 +118,12 @@
 #backlight {
   color: @yellow;
   border-radius: 0;
-  margin-left: 1rem;
+  margin-left: 10px;
 }
 
 #pulseaudio {
   color: @maroon;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 0.5rem;
+  margin-left: 5px;
   
 }
 
