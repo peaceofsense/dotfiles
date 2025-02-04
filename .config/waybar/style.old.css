@@ -7,31 +7,31 @@
 }
 
 #waybar {
-  background: #1D1D1F;
-  color: #F2F2F7;
+  background: #1e1e1e;
+  color: @text;
   margin: 5px 5px;
 }
 
 #workspaces {
   border-radius: 1rem;
   margin: 5px;
-  background-color: #2C2C2E;
+  background-color: @surface0;
   margin-left: 1rem;
 }
 
 #workspaces button {
-  color: #A0A0A5;
+  color: @lavender;
   border-radius: 1rem;
   padding: 0.4rem;
 }
 
 #workspaces button.active {
-  color: #34A853;
+  color: @sky;
   border-radius: 1rem;
 }
 
 #workspaces button:hover {
-  color: #5AC8FA;
+  color: @sapphire;
   border-radius: 1rem;
 }
 
@@ -39,11 +39,11 @@
 #hyprland-workspaces {
   border-radius: 1rem;
   margin: 5px;
-  background-color: #2C2C2E; /* Same as workspaces background */
+  background-color: @surface0;
 }
 
 #hyprland-workspaces button {
-  color: #A0A0A5; /* Subtle gray */
+  color: @lavender;
   border-radius: 1rem;
   padding: 0.4rem;
 }
@@ -67,7 +67,7 @@
 
 /* Styles for modules in "modules-right" */
 #network {
-  color: #B0B0B0;
+  color: @blue;
   margin: 5px;
 }
 
@@ -78,13 +78,13 @@
 }
 
 #cpu {
-  color: #5A6F8E;
+  color: @orange;
   margin-left: 10px;
   margin-right: 5px;
 }
 
 #memory {
-  color: #5A6F8E;
+  color: @purple;
   border-radius: 1rem;
   margin-left: 5px;
   margin-right: 5px;
@@ -98,13 +98,13 @@
 }
 
 #battery {
-  color: #008080;
+  color: @green;
   margin-left: 1rem;
   margin-right: 1rem;
 }
 
 #battery.charging {
-  color: #FFD700;
+  color: @green;
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -116,13 +116,13 @@
 }
 
 #backlight {
-  color: #FFFFFF;
+  color: @yellow;
   border-radius: 0;
   margin-left: 10px;
 }
 
 #pulseaudio {
-  color: #4A90E2;
+  color: @maroon;
   margin-left: 5px;
   
 }
@@ -135,7 +135,7 @@
 }
 
 #clock {
-  color: #F4D03F;
+  color: @sapphire;
   border-radius: 0px 1rem 1rem 0px;
   margin-left: 1rem;
 }
@@ -178,5 +178,3 @@
   color:white;
   margin-right: 0.5rem;
 }
-
-

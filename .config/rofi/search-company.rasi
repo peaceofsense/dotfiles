@@ -1,0 +1,111 @@
+* {
+    bg-col:        #202124;  /* Dark, almost black gray background for Google-style dark mode */
+    bg-col-light:  #2F3036;  /* Slightly lighter dark gray for secondary backgrounds */
+    border-col:    #3C4043;  /* Medium gray for subtle borders */
+    selected-col:  #4285F4;  /* Google Blue for selection highlight */
+    blue:          #34A853;  /* Google Green for clickable elements */
+    fg-col:        #E8EAED;  /* Light gray for readable text */
+    fg-col2:       #FFFFFF;  /* White for selected item text */
+    grey:          #9AA0A6;  /* Soft gray for less emphasized elements */
+    width:         600;
+    font:          "JetBrainsMono Nerd Font 18";
+}
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 360px;
+    width: 45%;
+    border: 3px;
+    border-color: @border-col;
+    background-color: @bg-col;
+}
+
+mainbox {
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col-light;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+prompt {
+    background-color: @blue;
+    padding: 6px;
+    text-color: @bg-col;
+    border-radius: 4px;
+    margin: 18px 0px 0px 18px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 18px 0px 0px 10px;
+    text-color: @fg-col;
+    background-color: @bg-col-light;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 18px;
+    columns: 2;
+    lines: 5;
+    background-color: @bg-col;
+}
+
+element {
+    padding: 5px;
+    background-color: @bg-col;
+    text-color: @fg-col;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    background-color: @selected-col;
+    text-color: @fg-col2;
+}
+
+mode-switcher {
+    spacing: 0;
+}
+
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+    background-color: @bg-col;
+    text-color: @blue;
+}
+
+message {
+    background-color: @bg-col-light;
+    margin: 2px;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+textbox {
+    padding: 6px;
+    margin: 18px 0px 0px 18px;
+    text-color: @blue;
+    background-color: @bg-col-light;
+}
