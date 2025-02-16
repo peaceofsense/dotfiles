@@ -16,7 +16,8 @@ configuration {
     display-filebrowser:        "";
     display-window:             "";
 	drun-display-format:        "{name}";
-	window-format:              "{w} · {c} · {t}";
+  drun-use-desktop-cache:      true;
+  window-format:              "{w} · {c} · {t}";
 }
 
 /*****----- Global Properties -----*****/

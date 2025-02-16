@@ -331,3 +331,5 @@ alias xfreerdp-evt='xfreerdp /v:10.188.251.74 /cert:ignore /u:ratheesan +clipboa
 alias xfreerdp-crt='xfreerdp /v:131.188.124.128:11005 /cert:ignore /u:jo43zezi +clipboard /dynamic-resolution'
 alias py='python3'
 alias ddcutil-bash='sudo ddcutil --display 1 setvcp 10'
+alias listfonts="fc-list :family | cut -d: -f2 | sort | uniq"
+

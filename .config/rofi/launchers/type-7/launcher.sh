@@ -17,5 +17,5 @@ dir="$HOME/.config/rofi/launchers/type-7"
 
 ## Run
 rofi \
-    -show drun \
+    -show drun -drun-use-desktop-cache \
     -theme ${dir}/${theme}.rasi
