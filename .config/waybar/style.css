@@ -68,7 +68,7 @@
 /* Styles for modules in "modules-right" */
 #network {
   color: #B0B0B0;
-  margin: 5px;
+  margin: 3px;
 }
 
 #bluetooth {
@@ -79,7 +79,7 @@
 
 #cpu {
   color: #5A6F8E;
-  margin-left: 10px;
+  margin-left: 5px;
   margin-right: 5px;
 }
 
@@ -166,6 +166,10 @@
   margin-right: 0.5rem;
   border-radius: 0px 1rem 1rem 0px;
   margin-left: 1rem;
+}
+
+#custom-notification{
+  margin-right: 0.5rem;
 }
 
 #keyboard-state label{

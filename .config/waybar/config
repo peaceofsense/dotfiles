@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["network", "cpu", "memory", "pulseaudio", "backlight", "clock", "custom/weather", "keyboard-state", "battery", "tray"],
+    "modules-right": ["network", "cpu", "memory", "pulseaudio", "backlight", "clock", "custom/weather", "keyboard-state", "battery", "tray" , "custom/notification"],
 	
 	"keyboard-state": {
 		"numlock": true,
@@ -21,7 +21,8 @@
 			"unlocked": ""           
 		}
 	},
-		
+	
+    
 	"custom/weather": {
     "format": "{}°",
     "tooltip": true,
@@ -122,7 +123,8 @@
 
     "network": {
         "tooltip": true,
-        "format-wifi": " {essid}",
+    //  "format-wifi": " {essid}",
+        "format-wifi": " ",
         "rotate": 0,
         "format-ethernet": "󰈀 ",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
@@ -208,6 +210,15 @@
     "scroll-step": 5
   },
     
+    "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+        "notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+        "none": " ",
+        "dnd-notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+        "dnd-none": " "
+    },
 	"return-type": "json",
 	"exec-if": "which swaync-client",
 	"exec": "swaync-client -swb",
