@@ -1,20 +1,20 @@
 {
     "layer": "bottom", // Waybar at top layer
     "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 35, // Waybar height (to be removed for auto height)
+    "height": 46, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // "gtk-layer-shell": "false",
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["clock", "hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["network", "cpu", "memory", "pulseaudio", "backlight", "clock", "custom/weather", "keyboard-state", "battery", "tray" , "custom/notification"],
+    "modules-right": ["network", "cpu", "memory", "pulseaudio", "custom/weather", "keyboard-state", "custom/notification","tray" , "battery"],
 	
 	"keyboard-state": {
 		"numlock": true,
 		"capslock": true,
 		"format": {
-			"numlock": "{icon} N",  
-			"capslock": "{icon} C"   
+			"numlock": "N",  
+			"capslock": "C"   
 		},
 		"format-icons": {
 			"locked": "",            
@@ -33,19 +33,29 @@
 	
 	"hyprland/workspaces": {
 	"format": "{icon}",
-	"format-icons": {
-            "10": "0",
-    //        "active": ""
-         },
+    "format-icons": {
+        "1": "\u4E00",  // 一 (Japanese Kanji)
+        "2": "\u4E8C",  // 二 (Japanese Kanji)
+        "3": "\u4E09",  // 三 (Japanese Kanji)
+        "4": "100",  
+        "5": "101",  
+        "6": "110",  
+        "7": "111",  
+        "8": "\u516B",  // 八 (Japanese Kanji)
+        "9": "\u4E5D",  // 九 (Japanese Kanji)
+        "10": "\u5341"  // 十 (Japanese Kanji)
+
+    },
+
 	"persistent-workspaces": {
-	    //"*": 3, // 5 workspaces by default on every monitor
+	    "*": 1, // 5 workspaces by default on every monitor
 	   //  "HDMI-A-2": 3 // but only three on HDMI-A-1
 	}
 	},
        "hyprland/window": {  
 	    "max-length": 40,
       	    "format": "{}",
-      	    "icon": true,
+      	    "icon": false,
 	    "icon-size":25,
    	    "separate-outputs": true
 
@@ -66,13 +76,12 @@
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 10
+        //"spacing": 10
     },
     
     "clock": {
-        "format": "{:%H:%M:%S}",
+        "format": "{:%d/%m %H:%M:%S}",
         "rotate": 0,
-        "format-alt": "{:%H:%M:%S 󰃭 %d·%m·%y}",
         "tooltip-format": "<span>{calendar}</span>",
         "calendar": {
             "mode": "month",
@@ -96,12 +105,12 @@
     },
     
     "cpu": {
-        "format": "{usage}% ",
+        "format": "  {usage}%",
         "tooltip": false
     },
     "memory": {
     "interval": 30,
-    "format": "{}%  " ,
+    "format": "  {}%" ,
     "max-length": 10
 	},
 
@@ -123,8 +132,8 @@
 
     "network": {
         "tooltip": true,
-    //  "format-wifi": " {essid}",
-        "format-wifi": " ",
+        "format-wifi": "  {essid}",
+      // "format-wifi": " ",
         "rotate": 0,
         "format-ethernet": "󰈀 ",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
@@ -151,10 +160,10 @@
 
     
     "pulseaudio": {
-        "format": "{icon} ",
+        "format": "{icon}  {volume}%",
         // "format-alt": "{volume}% {icon} | {format_source}",
         "format-alt-click": "click-right",
-        "format-muted": "",
+        "format-muted": " ",
         "format-icons": {
             "headphones": "",
             "handsfree": "",
@@ -215,7 +224,7 @@
     "format": "{icon}",
     "format-icons": {
         "notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
-        "none": " ",
+        "none": "",
         "dnd-notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
         "dnd-none": " "
     },

@@ -1,7 +1,7 @@
 @import "mocha.css";
 
 * {
-  font-family: JetBrainsMono NFP;
+  font-family: Fira Code Nerd Font;
   font-size: 14px;
   min-height: 0;
 }
@@ -13,26 +13,23 @@
 }
 
 #workspaces {
-  border-radius: 1rem;
   margin: 5px;
-  background-color: #2C2C2E;
   margin-left: 1rem;
 }
 
 #workspaces button {
   color: #A0A0A5;
-  border-radius: 1rem;
-  padding: 0.4rem;
 }
 
 #workspaces button.active {
   color: #34A853;
-  border-radius: 1rem;
+  border-top: 2px solid #e50a4c;
+  border-radius: 0;
+
 }
 
 #workspaces button:hover {
-  color: #5AC8FA;
-  border-radius: 1rem;
+  color: #66ec5f;
 }
 
 /* Styles for modules in "modules-left" */
@@ -68,7 +65,8 @@
 /* Styles for modules in "modules-right" */
 #network {
   color: #B0B0B0;
-  margin: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 #bluetooth {
@@ -78,16 +76,16 @@
 }
 
 #cpu {
-  color: #5A6F8E;
-  margin-left: 5px;
-  margin-right: 5px;
+  color: #B0B0B0;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 #memory {
-  color: #5A6F8E;
+  color: #B0B0B0;
   border-radius: 1rem;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 #hyprland-language {
@@ -99,19 +97,19 @@
 
 #battery {
   color: #008080;
-  margin-left: 1rem;
+  margin-left: 8px;
   margin-right: 1rem;
 }
 
 #battery.charging {
   color: #FFD700;
-  margin-left: 1rem;
+  margin-left: 8px;
   margin-right: 1rem;
 }
 
 #battery.warning:not(.charging) {
   color: @red;
-  margin-left: 1rem;
+  margin-left: 8px;
   margin-right: 1rem;
 }
 
@@ -122,22 +120,24 @@
 }
 
 #pulseaudio {
-  color: #4A90E2;
-  margin-left: 5px;
+  color: #B5C0D4;
+  margin-left: 8px;
+  margin-right: 8px;
   
 }
 
 #pulseaudio#microphone {
   color: @maroon;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 0.5rem;
+  margin-left: 8px;
+  margin-right: 8px;
   
 }
 
 #clock {
-  color: #F4D03F;
+  color: #B5C0D4;
   border-radius: 0px 1rem 1rem 0px;
   margin-left: 1rem;
+  margin-right: 8px;
 }
 
 /* General styles for additional modules */
@@ -152,35 +152,38 @@
 }
 
 #custom-power {
-  margin-right: 1rem;
+  margin-right: 8px;
   border-radius: 0px 1rem 1rem 0px;
   color: @red;
 }
 
+
+
 #tray {
-  margin-right: 1rem;
-  border-radius: 1rem;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 #custom-weather{
-  margin-right: 0.5rem;
+  margin-left: 8px;
+  margin-right: 8px;
   border-radius: 0px 1rem 1rem 0px;
-  margin-left: 1rem;
 }
 
 #custom-notification{
-  margin-right: 0.5rem;
-}
+  margin-left: 8px;
+  margin-right: 8px;}
 
 #keyboard-state label{
-  margin-right: 0.5rem;
   color:@surface0;
-  margin-right: 0.5rem;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 #keyboard-state label.locked{
   color:white;
-  margin-right: 0.5rem;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 
