@@ -5,7 +5,7 @@
     // "width": 1280, // Waybar width
     // "gtk-layer-shell": "false",
     // Choose the order of the modules
-    "modules-left": ["clock", "hyprland/workspaces"],
+    "modules-left": ["clock", "custom/nixicon", "hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["network", "cpu", "memory", "pulseaudio", "custom/weather", "keyboard-state", "custom/notification","tray" , "battery"],
 	
@@ -22,7 +22,7 @@
 		}
 	},
 	
-    
+
 	"custom/weather": {
     "format": "{}°",
     "tooltip": true,
@@ -30,6 +30,11 @@
     "exec": "wttrbar",
     "return-type": "json"
 	},
+
+    "custom/nixicon": {
+        "format": "\uf313",
+        "tooltip":false
+    },
 	
 	"hyprland/workspaces": {
 	"format": "{icon}",
@@ -43,7 +48,7 @@
         "7": "111",  
         "8": "\u516B",  // 八 (Japanese Kanji)
         "9": "\u4E5D",  // 九 (Japanese Kanji)
-        "10": "\u5341"  // 十 (Japanese Kanji)
+        "10": "󰚌"  
 
     },
 
@@ -76,7 +81,7 @@
     },
     "tray": {
         // "icon-size": 21,
-        //"spacing": 10
+        "spacing": 10
     },
     
     "clock": {
@@ -161,7 +166,7 @@
     
     "pulseaudio": {
         "format": "{icon}  {volume}%",
-        // "format-alt": "{volume}% {icon} | {format_source}",
+        //"format-alt": "{volume}% {icon} | {format_source}",
         "format-alt-click": "click-right",
         "format-muted": " ",
         "format-icons": {
@@ -178,7 +183,7 @@
         "scroll-step": 10,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "pavucontrol",
-		"tooltip-format": "{icon} {volume}%",
+		"tooltip-format": "{icon}  {volume}%",
     },
 
 	"pulseaudio#microphone": {

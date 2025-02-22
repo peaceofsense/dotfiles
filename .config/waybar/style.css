@@ -1,7 +1,7 @@
 @import "mocha.css";
 
 * {
-  font-family: Fira Code Nerd Font;
+  font-family: JetBrainsMono NF;
   font-size: 14px;
   min-height: 0;
 }
@@ -54,6 +54,8 @@
   color: @sapphire;
   border-radius: 1rem;
 }
+
+/* Window name*/
 
 #hyprland-window {
   color: @text;
@@ -135,6 +137,7 @@
 
 #clock {
   color: #B5C0D4;
+  font-family: Fira Code Nerd Font;
   border-radius: 0px 1rem 1rem 0px;
   margin-left: 1rem;
   margin-right: 8px;
@@ -186,4 +189,9 @@
   margin-right: 8px;
 }
 
-
+#custom-nixicon {
+  font-size: 22px;
+  color:rgb(0, 101, 8);
+  margin-left: 8px;
+  margin-right: 8px;
+}
