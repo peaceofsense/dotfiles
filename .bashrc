@@ -253,43 +253,63 @@ alias nmcli-connect='sudo nmcli device wifi connect'
 alias nmcli-pixel='nmcli device wifi connect "Google Pixel"'
 alias jnb='jupyter-notebook'
 
-
 git-push() {
-    # Prompt for commit message
-    read -p "Enter commit message: " message
-    
-    # Check if commit message is empty
-    if [ -z "$message" ]; then
-        echo "Error: Commit message cannot be empty."
+    # If no directory is provided, use the current directory
+    if [ -z "$1" ]; then
+        repo_dir=$(pwd)
+    else
+        # Expand tilde (~) if used in the directory path
+        repo_dir=$(realpath "$1")
+    fi
+
+    # Check if the directory exists
+    if [ ! -d "$repo_dir" ]; then
+        echo "Error: Directory '$repo_dir' does not exist."
         return 1
     fi
 
-    # Prompt for branch name
-    read -p "Enter branch name (default: main): " branch
-    branch=${branch:-main}  # Default to 'main' if no input provided
+    # Ensure it's a Git repository
+    if [ ! -d "$repo_dir/.git" ]; then
+        echo "Error: '$repo_dir' is not a Git repository."
+        return 1
+    fi
+
+    # Get current branch name
+    branch=$(git -C "$repo_dir" symbolic-ref --short HEAD 2>/dev/null)
+    # Default to 'main' if no branch is found
+    branch=${branch:-main}
+
+    if [ -z "$branch" ]; then
+        echo "Error: Unable to determine the current branch."
+        return 1
+    fi
 
     # Check for uncommitted changes
-    if ! git diff-index --quiet HEAD --; then
-        # Add all changes to the staging area
-        git add .
+    if ! git -C "$repo_dir" diff-index --quiet HEAD --; then
+        # Prompt for commit message
+        read -p "Enter commit message: " message
 
-        # Commit changes with the provided message
-        git commit -m "$message"
+        # Check if commit message is empty
+        if [ -z "$message" ]; then
+            echo "Error: Commit message cannot be empty."
+            return 1
+        fi
+
+        # Add and commit changes
+        git -C "$repo_dir" add .
+        git -C "$repo_dir" commit -m "$message"
     else
         echo "No changes to commit."
     fi
 
-    # Push changes to the specified branch on 'origin' remote
-    if git show-ref --verify --quiet "refs/heads/$branch"; then
-        git push origin "$branch"
-    else
-        echo "Error: Branch '$branch' does not exist."
-        return 1
-    fi
+    # Prompt for branch name to push to
+    read -p "Enter branch name to push to (default: $branch): " input_branch
+    # If no input, use the current or default branch
+    input_branch=${input_branch:-$branch}
+
+    # Push to the specified branch
+    git -C "$repo_dir" push origin "$input_branch"
 }
-
-
-
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
