@@ -286,6 +286,10 @@ git-push() {
 
     # Check for uncommitted changes
     if ! git -C "$repo_dir" diff-index --quiet HEAD --; then
+        # List changed files
+        echo "Changed files:"
+        git -C "$repo_dir" diff --name-only HEAD
+
         # Prompt for commit message
         read -p "Enter commit message: " message
 
