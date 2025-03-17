@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["clock", "custom/nixicon", "hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["network", "cpu", "memory", "pulseaudio", "custom/weather", "keyboard-state", "custom/notification","tray" , "battery"],
+    "modules-right": ["network", "cpu", "memory", "pulseaudio", "custom/weather", "keyboard-state", "custom/notification" , "battery"], //"tray"
 	
 	"keyboard-state": {
 		"numlock": true,
@@ -114,9 +114,9 @@
         "tooltip": false
     },
     "memory": {
-    "interval": 30,
-    "format": "  {}%" ,
-    "max-length": 10
+        "interval": 30,
+        "format": "  {}%" ,
+        "max-length": 10
 	},
 
 
@@ -124,12 +124,12 @@
 
     "battery": {
         "states": {
-            // "good": 95,
+         // "good": 95,
             "warning": 30,
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
+        "format-charging": "  {capacity}%",
         "format-plugged": "",
         "format-alt": "{capacity}% {time}",
         "format-icons": ["", "", "", "", ""]
@@ -165,10 +165,10 @@
 
     
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
+        "format": "{icon} {volume}%",
         //"format-alt": "{volume}% {icon} | {format_source}",
         "format-alt-click": "click-right",
-        "format-muted": " ",
+        "format-muted": "",
         "format-icons": {
             "headphones": "",
             "handsfree": "",
@@ -176,7 +176,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""] },
+            "default": ["", " ", " "] },
         "format-source": "",
         "format-source-muted": "",
 
