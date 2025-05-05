@@ -57,14 +57,13 @@
 	   //  "HDMI-A-2": 3 // but only three on HDMI-A-1
 	}
 	},
-       "hyprland/window": {  
-	    "max-length": 40,
-      	    "format": "{}",
-      	    "icon": false,
-	    "icon-size":25,
-   	    "separate-outputs": true
-
-	},
+"hyprland/window": {
+    "max-length": 40,
+    "format": "{icon}",
+    "icon": true,
+    "icon-size": 25,
+    "separate-outputs": false
+},
 	
     "hyprland/language": {
     "format-de": "DE",
