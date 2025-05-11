@@ -59,10 +59,10 @@
 	},
 "hyprland/window": {
     "max-length": 40,
-    "format": "{icon}",
-    "icon": true,
+    "format": "{}",
+    "icon": false,
     "icon-size": 25,
-    "separate-outputs": false
+    "separate-outputs": true
 },
 	
     "hyprland/language": {
