@@ -358,3 +358,12 @@ alias py='python3'
 alias ddcutil-bash='sudo ddcutil --display 1 setvcp 10'
 alias listfonts="fc-list :family | cut -d: -f2 | sort | uniq"
 
+# Shell wrapper for Yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
