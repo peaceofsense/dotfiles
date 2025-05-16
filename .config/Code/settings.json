@@ -1,0 +1,18 @@
+{
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "workbench.editorAssociations": {},
+    "git.openRepositoryInParentFolders": "never",
+    "explorer.confirmDelete": false,
+    "notebook.output.scrolling": true,
+    "projectManager.git.baseFolders": [
+        "/home/Documents",
+        "$HOME/peaceofsense/Documents"
+    ],
+    "window.customTitleBarVisibility": "auto",
+    "window.commandCenter": false,
+    "terminal.integrated.inheritEnv": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    }
+}

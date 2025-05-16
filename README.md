@@ -8,4 +8,5 @@ This repository contains my personal dotfiles and configurations. These files ar
 cd dotfiles
 stow .
 stow --adopt . # Incase of existing files
+code --list-extensions > vscode-extensions.txt # Install extensions
 
